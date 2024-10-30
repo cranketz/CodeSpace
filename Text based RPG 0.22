@@ -1,4 +1,5 @@
 import os
+os.system("cls")
 #                               1.Blok; Menü ve ardından inputlar 
 #                             (cinsiyet sistemi buraya eklenecek.)
 menu = """
@@ -44,7 +45,8 @@ def attack(attacker,defender):
                   input()
                   exit()
             else:
-                  print("The {} hit {} damage to {} but he defended {} of it!".format(attacker.name,attacker.atk,defender.name))
+                  print("The {} hit {} damage to {}!".format(attacker.name,attacker.atk,defender.name))
+                  print("{} defended {} of the attack".format(defender.name,defender.defence))
                   print("{}'s health is now {}".format(defender.name,defender.hp))
       print("--------------------------------------------------------------------")
 
@@ -53,7 +55,7 @@ def defence(player):
       print("{} decided to defence!".format(player.name))
       print("{}'s defence is {}".format(player.name,player.defence))
       print()
-      addedDefence = player.defence * 10 / 100
+      addedDefence = 15
       player.defence = player.defence + addedDefence
       print("{} is improved his defence! now he have {} defence".format(player.name,player.defence))
       print("--------------------------------------------------------------------")
@@ -62,7 +64,7 @@ def rest(player):
       print("{} decided to rest!".format(player.name))
       print("{}'s health is {}".format(player.name,player.hp))
       print()
-      heal = player.hp * 15 / 100
+      heal = 20
       player.hp = player.hp + heal
       print("The {} healed himself! Now he have {} hp".format(player.name,player.hp))
       print("--------------------------------------------------------------------")
@@ -72,7 +74,7 @@ def focus(player):
       print("{} decided to focus for increasing his attack!".format(player.name))
       print("{}'s Attack power is {}!".format(player.name,player.atk))
       print()
-      addedAtk = player.atk * 20 /100
+      addedAtk = 25
       player.atk = player.atk + addedAtk
       print("{}'s Attack is now {}!".format(player.name,player.atk))
       print("--------------------------------------------------------------------")
@@ -85,7 +87,7 @@ while True:
             if turn < 1:
                   break
             else:
-                  os.system('cls')
+                  os.system("cls")
                   print("{}'s turn!".format(player1.name))
                   print(menu)
                   print("Which move you will do?")
